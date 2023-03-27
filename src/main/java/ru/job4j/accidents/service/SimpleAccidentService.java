@@ -13,6 +13,11 @@ public class SimpleAccidentService implements AccidentService {
     private AccidentRepository accidentRepository;
 
     @Override
+    public void save(Accident accident) {
+         accidentRepository.save(accident);
+    }
+
+    @Override
     public List<Accident> findAll() {
         return accidentRepository.findAll();
     }

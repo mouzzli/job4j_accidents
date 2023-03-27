@@ -17,10 +17,11 @@
 <div class="container-fluid p-0">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">JOB4J_ACCIDENTS</a>
+            <a class="navbar-brand active" href="#">JOB4J_ACCIDENTS</a>
             <div class="collapse navbar-collapse">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" th:text="${user}"></a>
+                    <a class="nav-item nav-link active" href="#">Инциденты</a>
+                    <a class="nav-item nav-link" th:href="@{/accidents/createForm}">Добавить Инцидент</a>
                 </div>
             </div>
         </div>
@@ -31,6 +32,7 @@
     <table class="table">
         <thead>
         <tr>
+            <th scope="col">#</th>
             <th scope="col">Номер Автомобиля</th>
             <th scope="col">Описание Нарушения</th>
             <th scope="col">Адрес</th>
@@ -38,6 +40,11 @@
         </thead>
         <tbody>
         <tr th:each="accident: ${accidents}">
+            <td>
+                <a th:href="@{|/accidents/updateForm?id=${accident.id}|}">
+                    <i class="fa fa-edit"></i><span th:text="${accident.id}"></span>
+                </a>
+            </td>
             <td th:text="${accident.name}"></td>
             <td th:text="${accident.text}"></td>
             <td th:text="${accident.address}"></td>
