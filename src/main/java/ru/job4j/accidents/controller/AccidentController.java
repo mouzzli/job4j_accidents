@@ -36,7 +36,7 @@ public class AccidentController {
 
     @PostMapping("/update")
     public String viewUpdateAccident(@ModelAttribute Accident accident) {
-        accidentService.save(accident);
+        accidentService.update(accident);
         return "redirect:/";
     }
 }

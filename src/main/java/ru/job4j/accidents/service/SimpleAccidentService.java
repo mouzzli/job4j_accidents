@@ -22,6 +22,12 @@ public class SimpleAccidentService implements AccidentService {
     }
 
     @Override
+    public void update(Accident accident) {
+        accident.setType(accidentTypeRepository.findById(accident.getType().getId()).get());
+        accidentRepository.update(accident);
+    }
+
+    @Override
     public List<Accident> findAll() {
         return accidentRepository.findAll();
     }

@@ -24,9 +24,12 @@ public class AccidentMem implements AccidentRepository {
 
     @Override
     public void save(Accident accident) {
-        if (accident.getId() == 0) {
-            accident.setId(accidentCount.incrementAndGet());
-        }
+        accident.setId(accidentCount.incrementAndGet());
+        accidents.put(accident.getId(), accident);
+    }
+
+    @Override
+    public void update(Accident accident) {
         accidents.put(accident.getId(), accident);
     }
 

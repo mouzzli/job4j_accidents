@@ -9,6 +9,8 @@ public interface AccidentService {
 
     void save(Accident accident);
 
+    void update(Accident accident);
+
     List<Accident> findAll();
 
     Optional<Accident> findById(int id);
