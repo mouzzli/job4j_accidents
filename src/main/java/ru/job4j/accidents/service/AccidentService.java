@@ -7,9 +7,9 @@ import java.util.Optional;
 
 public interface AccidentService {
 
-    void save(Accident accident);
+    void save(Accident accident, List<Integer> rIds);
 
-    void update(Accident accident);
+    void update(Accident accident, List<Integer> rIds);
 
     List<Accident> findAll();
 
