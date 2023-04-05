@@ -11,7 +11,7 @@ public interface AccidentService {
 
     void update(Accident accident, List<Integer> rIds);
 
-    List<Accident> findAll();
+    Iterable<Accident> findAll();
 
     Optional<Accident> findById(int id);
 }
