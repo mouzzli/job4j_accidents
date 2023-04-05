@@ -1,12 +1,11 @@
-package ru.job4j.accidents.repository;
+package ru.job4j.accidents.repository.mem;
 
-import org.springframework.stereotype.Repository;
 import ru.job4j.accidents.model.Rule;
+import ru.job4j.accidents.repository.RuleRepository;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-@Repository
 public class RuleMem implements RuleRepository {
     private final Map<Integer, Rule> rules = new ConcurrentHashMap<>();
 
@@ -22,7 +21,7 @@ public class RuleMem implements RuleRepository {
     }
 
     @Override
-    public Set<Rule> findRulesByAccident(List<Integer> rIds) {
+    public Set<Rule> findAccidentRules(List<Integer> rIds) {
         Set<Rule> result = new HashSet<>();
         for (Integer rId : rIds) {
             Rule rule = rules.get(rId);

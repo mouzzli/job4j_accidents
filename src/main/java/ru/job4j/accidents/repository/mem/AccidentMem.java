@@ -1,15 +1,15 @@
-package ru.job4j.accidents.repository;
+package ru.job4j.accidents.repository.mem;
 
 import org.springframework.stereotype.Repository;
 import ru.job4j.accidents.model.Accident;
 import ru.job4j.accidents.model.AccidentType;
 import ru.job4j.accidents.model.Rule;
+import ru.job4j.accidents.repository.AccidentRepository;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@Repository
 public class AccidentMem implements AccidentRepository {
     private final AtomicInteger accidentCount;
     private final Map<Integer, Accident> accidents = new ConcurrentHashMap<>();
@@ -23,9 +23,10 @@ public class AccidentMem implements AccidentRepository {
     }
 
     @Override
-    public void save(Accident accident) {
+    public Accident save(Accident accident) {
         accident.setId(accidentCount.incrementAndGet());
         accidents.put(accident.getId(), accident);
+        return accident;
     }
 
     @Override

@@ -1,7 +1,8 @@
-package ru.job4j.accidents.repository;
+package ru.job4j.accidents.repository.mem;
 
 import org.springframework.stereotype.Repository;
 import ru.job4j.accidents.model.AccidentType;
+import ru.job4j.accidents.repository.AccidentTypeRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +10,6 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
-@Repository
 public class AccidentTypeMem implements AccidentTypeRepository {
 
     private final Map<Integer, AccidentType> types = new ConcurrentHashMap<>();

@@ -8,5 +8,5 @@ import java.util.Set;
 public interface RuleRepository {
     List<Rule> findAll();
 
-    Set<Rule> findRulesByAccident(List<Integer> rIds);
+    Set<Rule> findAccidentRules(List<Integer> rIds);
 }

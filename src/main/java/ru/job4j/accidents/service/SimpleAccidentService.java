@@ -20,14 +20,14 @@ public class SimpleAccidentService implements AccidentService {
     @Override
     public void save(Accident accident, List<Integer> rIds) {
         accident.setType(accidentTypeRepository.findById(accident.getType().getId()).get());
-        accident.setRules(ruleRepository.findRulesByAccident(rIds));
+        accident.setRules(ruleRepository.findAccidentRules(rIds));
         accidentRepository.save(accident);
     }
 
     @Override
     public void update(Accident accident, List<Integer> rIds) {
         accident.setType(accidentTypeRepository.findById(accident.getType().getId()).get());
-        accident.setRules(ruleRepository.findRulesByAccident(rIds));
+        accident.setRules(ruleRepository.findAccidentRules(rIds));
         accidentRepository.update(accident);
     }
 
