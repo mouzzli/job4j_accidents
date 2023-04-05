@@ -18,7 +18,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.*;
 
-@Repository
 @AllArgsConstructor
 public class AccidentJdbcTemplateRepository implements AccidentRepository {
     private final JdbcTemplate jdbcTemplate;

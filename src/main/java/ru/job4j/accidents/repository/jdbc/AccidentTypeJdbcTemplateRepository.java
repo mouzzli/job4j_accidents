@@ -11,7 +11,6 @@ import ru.job4j.accidents.repository.AccidentTypeRepository;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
 @AllArgsConstructor
 public class AccidentTypeJdbcTemplateRepository implements AccidentTypeRepository {
     private final JdbcTemplate jdbcTemplate;
