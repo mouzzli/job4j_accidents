@@ -2,6 +2,8 @@ package ru.job4j.accidents.service;
 
 import ru.job4j.accidents.model.AccidentType;
 
+import java.util.List;
+
 public interface AccidentTypeService {
-    Iterable<AccidentType> findAll();
+    List<AccidentType> findAll();
 }

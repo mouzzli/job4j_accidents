@@ -35,7 +35,7 @@ public class SimpleAccidentService implements AccidentService {
     }
 
     @Override
-    public Iterable<Accident> findAll() {
+    public List<Accident> findAll() {
         return accidentRepository.findAll();
     }
 
