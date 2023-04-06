@@ -25,6 +25,13 @@
                     <a class="nav-item nav-link" th:href="@{/accidents/createForm}">Добавить Инцидент</a>
                 </div>
             </div>
+
+            <ul class="navbar-nav">
+                <div class="d-flex justify-content-end" th:if="${user.username}">
+                    <a class="nav-link nav-item active" th:text="${user.username}"></a>
+                    <a class="nav-link nav-item" th:href="@{/logout}">Выйти</a>
+                </div>
+            </ul>
         </div>
     </nav>
 </div>
