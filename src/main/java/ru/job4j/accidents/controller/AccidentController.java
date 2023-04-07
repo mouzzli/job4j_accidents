@@ -1,6 +1,7 @@
 package ru.job4j.accidents.controller;
 
 import lombok.AllArgsConstructor;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -21,17 +22,19 @@ public class AccidentController {
 
     @GetMapping("/createForm")
     public String viewCreateAccident(Model model) {
+        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         model.addAttribute("types", accidentTypeService.findAll());
         model.addAttribute("rules", ruleService.findAll());
-        return "createAccident";
+        return "accident/createAccident";
     }
 
     @GetMapping("/updateForm")
     public String viewUpdateAccident(@RequestParam int id, Model model) {
+        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         model.addAttribute("accident", accidentService.findById(id).get());
         model.addAttribute("types", accidentTypeService.findAll());
         model.addAttribute("rules", ruleService.findAll());
-        return "editAccident";
+        return "accident/editAccident";
     }
 
     @PostMapping("/create")
