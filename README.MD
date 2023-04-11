@@ -1,5 +1,7 @@
 # Job4j_Accidents
 
+[![Build](https://github.com/mouzzli/job4j_accidents/actions/workflows/build.yml/badge.svg)](https://github.com/mouzzli/job4j_accidents/actions/workflows/build.yml)
+
 В блоке Spring мы будем разрабатывать проект - Автонарушители.
 
 В системе существуют две роли. Обычные пользователи и автоинспекторы.
