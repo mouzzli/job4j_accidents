@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import ru.job4j.accidents.model.User;
-import ru.job4j.accidents.repository.data.AuthorityRepository;
-import ru.job4j.accidents.repository.data.UserRepository;
+import ru.job4j.accidents.repository.AuthorityRepository;
+import ru.job4j.accidents.repository.UserRepository;
 
 @Service
 @AllArgsConstructor
